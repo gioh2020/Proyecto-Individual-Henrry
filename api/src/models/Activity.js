@@ -1,8 +1,15 @@
-const {DataTypes} = require('Sequelize')
+
+const { DataTypes, UUIDV4 } = require('sequelize');
 
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('activity', {
+    id: {
+      type: DataTypes.UUID,
+      primaryKey: true,
+      unique: true,
+      defaultValue: UUIDV4
+    },
       name:{
         type: DataTypes.STRING,
         allowNull: false,

@@ -1,27 +1,17 @@
 const { Router } = require('express');
+const countryRouter = require('./countryRouters/routes.country');
+const idCountryRouter = require('./countryRouters/idCountry.route');
+const activityRouter = require('./activity.route');
 
-const express = require("express");
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
 
 
 const router = Router();
-const server = express()
-
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
 
 
-// router.post("/users", async (req, res) => {
-//     try {
-//      const {name, id, flag, continet, capital, subregion, are, population} = req.body;
-//      const newUser = await Country.create({name, id, flag, continet, capital, subregion, are, population});
-//      res.status(201).send(newUser)
- 
-//     } catch (error) {
-//      res.status(400).send(error.message)
-//     }
-//  })
+router.use('/countries', countryRouter);
+router.use('/countries', idCountryRouter)
+router.use('/activities', activityRouter)
 
+// router.use('/activity', activityRouter);
 
 module.exports = router;

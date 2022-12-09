@@ -19,7 +19,7 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const {getApiAllInfo} =require('./src/controllers/countries.cotroller') 
+const {getApiAllInfo} =require('./src/controllers/info.controller') 
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
