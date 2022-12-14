@@ -1,0 +1,14 @@
+/* .body{
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+    background-size: 800px 800px;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+} */
+
+.paginado{
+    display: flex;
+    flex-direction:row ;
+    justify-content: center;
+}

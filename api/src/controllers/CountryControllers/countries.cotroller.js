@@ -1,4 +1,4 @@
-const {Country} = require("../../db")
+const {Country, Activity} = require("../../db")
 
 const getCountries = async () => {
     try {
@@ -12,12 +12,17 @@ const getCountries = async () => {
                 "subregion",
                 "population",
                 "area",
+                "timezones"
               ],
+              include:{
+                model: Activity,
+                attributes:['name', 'difficulty', 'duration','season']
+              }
 
         })
         return countries
     } catch (error) {
-        console.log(error)
+        throw  new Error(error.message)
     }
 };
 

@@ -18,14 +18,15 @@ const getApiAllInfo = async () => {
                 subregion: country.subregion ? country.subregion :"Don't has subregion",
                 area: country.area,
                 population: country.population,
-            };
+                timezones: country.timezones? country.timezones[country.timezones.length-1]: undefined,
+            }    
             
         });
         
         await Country.bulkCreate(countriesInfo);  
         
     } catch (error) {
-        console.log(error)
+        throw  new Error(error.message)
         
     }
     

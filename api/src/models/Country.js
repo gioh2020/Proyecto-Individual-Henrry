@@ -40,6 +40,11 @@ module.exports = (sequelize) => {
       allowNull: true,
       
     },
+    timezones:{
+      type: DataTypes.STRING,
+      allowNull: true,
+      
+    },
 
   },
   {timestamps:false});

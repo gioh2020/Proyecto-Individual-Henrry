@@ -1,0 +1,16 @@
+.paginado{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+    justify-content: center;
+    border-radius: 5px;
+    border: 2px;
+    
+}
+.cur{
+    cursor: pointer;
+    list-style: none;
+    border: 2px solid;
+    width:21px ;
+}
