@@ -8,7 +8,7 @@ router.get('/:id', async (req,res)=> {
    try {
     const country = await getIdCountry(id);
     if(id){
-        res.status(200).json(country);
+        res.status(200).send(country);
     }
     
    } catch (error) {

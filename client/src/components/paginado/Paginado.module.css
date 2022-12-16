@@ -7,10 +7,16 @@
     border-radius: 5px;
     border: 2px;
     
+    
 }
 .cur{
     cursor: pointer;
     list-style: none;
     border: 2px solid;
     width:21px ;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+.paginado2{
+    margin-top: 30px;
 }

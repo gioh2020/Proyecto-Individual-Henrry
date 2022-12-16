@@ -8,9 +8,9 @@ const getApiAllInfo = async () => {
 
 
         const countriesInfo = getCountriesInfoFromApi.data.map((country) => {
-           
+            const countryName = country.name.common.replace("Å", "A")
             return{
-                name: country.name.common,
+                name: countryName,
                 id: country.cca3,
                 flag: country.flags[0],
                 continent: country.region,

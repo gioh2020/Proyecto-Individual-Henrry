@@ -10,7 +10,7 @@ function Paginado({countriesPerPag,allCountries,paginado}){
     }
 
     return(
-        <nav>
+        <nav className={styles.paginado2}>
             <ul className={styles.paginado}>
                 {
                     pageNumbs &&

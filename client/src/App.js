@@ -3,6 +3,8 @@ import React from 'react';
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 import Home from './components/home/Home';
 import NavBar from './components/navBAr/NavBar';
+import CountryDetail from './components/countryDetail/CountryDetail.jsx';
+import Clocks from './components/clocks/Clocks';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <div className='App'>
         <Route path = "/" component = {NavBar}/>
         <Route exact path = '/' component = {Home} />
+        <Route path = "/infocountry/:Id" component={CountryDetail}/>
+        <Route path = "/Clocks" component={Clocks}/>
         
       </div>
     </Switch>

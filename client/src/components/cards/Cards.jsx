@@ -7,18 +7,10 @@ function Cards(props){
         <div className={styles.cards}>
              {props.selectCountriesPerPag?.map((countrie)=>{
                 return(
-                    <Link to="/pais" key={countrie.id} className={styles.card}>
+                    <Link to={`/infocountry/${countrie.id}`} key={countrie.id} className={styles.card}>
                         <h1 className={styles.textName}>{countrie.name}</h1>
-                        {/* <h2>{countrie.activities?.map((activity)=>{
-                            return(
-                                <h2>{activity.name}</h2>
-                            )
-                            })}
-                        </h2> */}
-
                         <img src={countrie.flag} alt="" className={styles.image}/>
-                        <h2>{countrie.continent}</h2>
-                        
+                        <h2>{countrie.continent}</h2>   
                     </Link>  
                 )
             })}

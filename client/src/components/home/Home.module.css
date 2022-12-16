@@ -11,4 +11,41 @@
     display: flex;
     flex-direction:row ;
     justify-content: center;
+    margin-top: 0px;
+    height: 30px;
+    align-items: center;
+    margin-bottom: 30px;
+    
+}
+.nextBack{
+    height: 15px;
+    margin-top: 0px ;
+    text-align: center;
+   height: 30px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    vertical-align: middle;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.input{
+    width: 30px ;
+    text-align: center;
+}
+
+
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+h3{
+    margin: 0px;
+}
+.paginado2{
+    margin-top: 30px;
 }

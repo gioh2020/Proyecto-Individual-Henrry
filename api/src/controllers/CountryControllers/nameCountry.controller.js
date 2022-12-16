@@ -1,4 +1,4 @@
-const {Country} = require("../../db");
+const {Country, Activity} = require("../../db");
 const { Op } = require("sequelize");
 
 const getInfoByName = async (name) => {
@@ -8,7 +8,13 @@ const getInfoByName = async (name) => {
                 name: {
                   [Op.iLike]: `%${name}%`,
                 },
+                
               },
+              include: [{
+                model: Activity,
+                attributes: ["id", "name", "difficulty", "duration", "season", "img"],
+          
+              }]
         })
         if(country.length){
             return country
