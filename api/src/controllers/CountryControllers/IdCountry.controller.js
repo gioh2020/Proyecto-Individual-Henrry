@@ -8,7 +8,7 @@ const getIdCountry = async (id) =>{
             where:{id: id},
               include: [{
                 model: Activity,
-                attributes: ["id", "name", "difficulty", "duration", "season", "img"],
+                attributes: ["id", "name", "difficulty", "duration", "season", "img","description" ],
           
               }]
         },

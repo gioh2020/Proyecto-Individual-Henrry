@@ -1,8 +1,98 @@
 .navBar{
-    display: flex;
+
+    display: grid;
+    grid-template-columns: auto auto auto auto 80px 85px 320px;
     margin-left: 30px;
+    border-bottom: 2px solid rgb(45, 212, 195);
+    border-top: 25px solid rgb(0, 0, 0) ;
+    border-radius: 2px;
+    margin: 0px;
+    margin-bottom: 25px;
+    height: 45px;
+    width: 100%;
+    position: fixed ;
+    top: 0;
+    z-index: 10;
+    background-color: rgb(255, 255, 255);
+   
+    
+    
 }
-.ink{
-    margin-right: 50px;
+.hcDiv{
+    grid-column: 1/ span 3;
+    text-align:start ;
+    margin-left: 30px;
+
 
 }
+.img{
+    margin: 0px;
+    width: 60px;
+    height: 25px;
+    margin-right: 3px;
+    margin-top: 10px;
+}
+.hc{
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    font-weight: 850;
+    margin-bottom: 3px;
+    
+}
+
+.nav1{
+    text-decoration: none;
+    font-size: 16px;
+    grid-column: 5;
+    text-align: center;
+    color: black;
+    font-weight: 649;
+    margin-bottom: 3px;
+    margin-right: 15px;
+    margin-top: 16px;
+    height: 23px;
+    text-align: center;
+    
+}
+.nav1:hover{
+    background:  rgb(45, 212, 195);
+    border-radius: 5px;
+}
+
+.nav2{
+    text-decoration: none;
+    font-size: 16px;
+    grid-column: 6;
+    text-align: center;
+    color: black;
+    font-weight: 649;
+    margin-bottom: 3px;
+    margin-right: 15px;
+    margin-top: 16px;
+    height: 23px;
+}
+.nav2:hover{
+    background: rgb(101, 52, 114);
+    border-radius: 5px;
+    color: rgb(45, 212, 195);
+}
+
+.nav3{
+    text-decoration: none;
+    font-size: 16px;
+    grid-column: 7;
+    text-align: center;
+    margin-right: 30px;
+    color: black;
+    font-weight: 649;
+    margin-bottom: 3px;
+    margin-right: 100px;
+    margin-top: 16px;
+    height: 23px;
+}
+.nav3:hover{
+    background:  rgb(45, 212, 195);
+    border-radius: 5px;
+}
+

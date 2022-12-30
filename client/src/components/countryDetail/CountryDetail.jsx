@@ -31,9 +31,10 @@ function CountryDetail(){
                         <div>
                             <h3>{activity.name}</h3>
                             <img src={activity.img} alt="" />
-                            <h3>{activity.difficulty}</h3>
-                            <h3>{activity.duration} hour</h3>
-                            <h3>{activity.season}</h3>
+                            <h3>Difficulty: {activity.difficulty}</h3>
+                            <h3>Duration: {activity.duration} hour</h3>
+                            <h3>Season :{activity.season}</h3>
+                            <p>Description: {activity.description}</p>
 
                         </div>
                      )

@@ -10,22 +10,24 @@ function Paginado({countriesPerPag,allCountries,paginado}){
     }
 
     return(
-        <nav className={styles.paginado2}>
+        <div className={styles.paginado2 }  >
             <ul className={styles.paginado}>
                 {
                     pageNumbs &&
                      pageNumbs.map(num=>{
                         return(
-                        <li className={styles.cur}>
+                        <li className={styles.cur} key={num}
+                        onClick={()=> paginado(num)}>
+
                             <a 
-                            onClick={()=> paginado(num)} 
+                             
                             >{num}</a>
                         </li>
                         )
                      })
                 }
             </ul>
-        </nav>
+        </div>
     )
 }
 

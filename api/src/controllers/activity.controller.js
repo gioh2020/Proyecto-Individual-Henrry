@@ -1,7 +1,7 @@
 const {Activity, Country} = require("../db");
 
 const postActivity = async (activityData) => {
-    const {idCountry, name, difficulty, duration, season, img} = activityData
+    const {idCountry, name, difficulty, duration, season, img, description} = activityData
 
     const searchActivity = await Activity.findAll({
         where: {name: name}
@@ -16,7 +16,7 @@ const postActivity = async (activityData) => {
           }
     })
    if(!searchActivity.length){
-       const activity = await  Activity.create({name, difficulty, duration, season, img});
+       const activity = await  Activity.create({name, difficulty, duration, season, img, description});
            
            const countryId = await Country.findAll({
                where:{id: idCountry}, 

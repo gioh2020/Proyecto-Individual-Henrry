@@ -1,0 +1,41 @@
+.filter{
+    
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    height: 175px;
+    background-color: rgb(60, 244, 225);
+    margin: 0px;
+    margin-left: 12px;
+    margin-top: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    align-items: center;
+
+}
+.select1{
+    border-radius: 5px;
+    width: 70%;
+    text-align: center; 
+    border: solid purple;
+    margin-top: 1px;
+}
+.select2{
+    border-radius: 5px;
+    width: 70%;
+    text-align: center; 
+    border: solid purple;
+}
+input{
+    border: solid purple;
+    margin-top: 15px;
+    margin-bottom: 0.5px;
+    border-radius: 5px;
+    width: 70%;
+    text-align: center; 
+}
+button{
+    border-radius: 5px;
+    color: aqua;
+    background-color: purple;
+}

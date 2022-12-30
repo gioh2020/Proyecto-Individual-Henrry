@@ -1,0 +1,8 @@
+.forma{
+  display: flex;
+  flex-direction: column;
+  border: 5px solid;
+  width: 800px;
+  height: 1000px;
+  margin-left: 100px;
+}

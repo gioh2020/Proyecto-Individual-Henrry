@@ -6,7 +6,8 @@ import Cards from "../cards/Cards";
 import Paginado from "../paginado/Paginado";
 import styles from "./Home.module.css"
 import Filter from "../filters/Filters";
-import Clocks from "../clocks/Clocks";
+import globo from "./globo2.png"
+
 
 //  indice  0  1  2  3  4  5  6  7  8  9   10  11  12  13  14  15  16  17  18  19
 // countri [1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21]
@@ -18,7 +19,7 @@ function Home(){
 
     const [pagNum, setPagNum] = useState(1)
     const [pagOrder, setPagOrder] = useState(false)
-    const [countriesPerPag, setCountriesPerPag] = useState(12)
+    const [countriesPerPag, ] = useState(12)
     const idxLastCountry = pagNum * countriesPerPag // 1*10 = 10   2 * 10 = 20
     const idxFirstCountry = idxLastCountry - countriesPerPag // 20 - 10 = 10
     const selectCountriesPerPag = allCountries.slice(idxFirstCountry, idxLastCountry)
@@ -36,10 +37,6 @@ const paginado = (pagNum) =>{
 }
 useEffect(()=>{dispatch(getCharacters())},[])
 
-// function handleClick(event){
-//     event.preventDefault()
-//     dispatch(getCharacters())
-// }
 
 function handleInput(event){
     setTimeout(function(){
@@ -72,33 +69,37 @@ function handleFilter(event){
 function handleSearchByName(event){ 
     
     dispatch(searchByname(event))
-  
-   
-   
-  
-    
+
  }
     return(
-        <div>
+        <div className={styles.filter}>
+            <div className={styles.filter2}>
             <Filter
                 handleFilter={handleFilter}
                 handleFilterByName={handleFilterByName}
                 handleSearchByName={handleSearchByName}
             />
-
+            
             <Paginado 
                 allCountries={allCountries.length}
                 countriesPerPag={countriesPerPag}
                 paginado={paginado}
+                
             />
+            <img src={globo} alt=""  className={styles.img}/>
+           
+            </div>
+
+
+            <div className={styles.cards}>
+            <Cards selectCountriesPerPag = {selectCountriesPerPag} />
+            </div>
+           
             <div className={styles.paginado}>
                 <button className={styles.nextBack}  name="back" onClick={handleClicck}>{"<<<"}</button>
                 <h3>Pag <input className={styles.input} id="holis" type="number" placeholder={pagNum} onChange={handleInput}/> de {Math.ceil(allCountries.length/countriesPerPag)}</h3>
                 <button className={styles.nextBack}   name='next' onClick={handleClicck}>{">>>"}</button>
             </div>
-            <Cards selectCountriesPerPag = {selectCountriesPerPag}
-            />
-           
         </div>
         
     )

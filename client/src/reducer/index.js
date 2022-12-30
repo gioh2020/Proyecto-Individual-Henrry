@@ -22,7 +22,6 @@ function rootReducer (state = initialState, action){
                 
             }
                 case "GET_COUNTRY":
-                    // state.countriesByName.push(action.payload[0])
                     return {
                         ...state,
                         countries: action.payload                
@@ -88,7 +87,6 @@ function rootReducer (state = initialState, action){
                                 countries: sortCountries
                             }
                             case "GET_CLOCKS":
-                                console.log('estet es: ',action.payload)
                                 return {
                                     ...state,
                                     clocks: action.payload                

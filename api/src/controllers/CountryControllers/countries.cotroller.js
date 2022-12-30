@@ -12,11 +12,12 @@ const getCountries = async () => {
                 "subregion",
                 "population",
                 "area",
-                "timezones"
+                "timezones",
+                
               ],
               include:{
                 model: Activity,
-                attributes:['name', 'difficulty', 'duration','season']
+                attributes:['name', 'difficulty', 'duration','season', "description"]
               }
 
         })

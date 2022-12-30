@@ -11,7 +11,7 @@ module.exports = (sequelize) => {
       defaultValue: UUIDV4
     },
       name:{
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(),
         allowNull: false,
       },
       img:{
@@ -29,6 +29,10 @@ module.exports = (sequelize) => {
       },
       season:{
         type: DataTypes.ENUM('Summer','Autumn', 'Winter','Spring'),
+        allowNull: false,
+      },
+      description:{
+        type: DataTypes.STRING(300),
         allowNull: false,
       },
 
