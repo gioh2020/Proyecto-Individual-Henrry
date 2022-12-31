@@ -5,8 +5,8 @@ const postActivity = async (activityData) => {
 
     const searchActivity = await Activity.findAll({
         where: {name: name}
-    })
-
+    }) 
+    
     const searchActivityInCountry = await Country.findByPk(idCountry.toUpperCase(),{
         attributes: ["id"],
           include:{

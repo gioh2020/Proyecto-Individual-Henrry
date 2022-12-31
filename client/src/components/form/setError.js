@@ -4,7 +4,7 @@ const regex = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/
 
 
 function setFormError(data){
-    console.log(regex.test(data.img))
+  
     
         
     let errors = {}

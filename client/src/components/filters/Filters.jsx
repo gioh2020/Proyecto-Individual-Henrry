@@ -1,21 +1,45 @@
 import React from "react";
 import { useState } from "react";
 import styles from "./Filter.module.css"
+import { useSelector, useDispatch } from "react-redux";
 
 
 
 
 function Filter(props){
+    
+    const country = useSelector((state)=> state.countries)
+    
     const [countryName, setCountryName] = useState('')
 
 
-const handleInput = (event) =>{
+    const handleInput = (event) =>{
     setCountryName(event.target.value)
-}
+    }
    
 
     return(
         <div className={styles.filter}>
+
+{/* 
+                    <select name="" id=""  className={styles.select1}>
+                        <option value="">-----</option>
+                        {
+                            country.forEach(element => {
+                               return(
+
+                                   element.activities?.map(elemnt=>{
+                                       console.log(elemnt.name)
+                                       return(
+                                           <option value={elemnt.name} key={elemnt.name}>{elemnt.name}</option>
+                                           )
+                                       })
+                               )
+                                
+                            })
+                         }
+                    </select> */}
+
             <input type="text" onChange={handleInput } placeholder="Search by name"/>
             <button onClick={()=> props.handleSearchByName(countryName)}>Search</button>
             <hr />

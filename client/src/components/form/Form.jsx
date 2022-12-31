@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux"
 import styles from './Form.module.css'
 import { getCharacters, postActivity, filterByname } from "../../actions"
 import setFormError from "./setError"
+import axios from "axios";
 
 
 function Form(){
@@ -50,7 +51,7 @@ function Form(){
            }, ); 
            
     })
-    console.log(errors)
+
 
     const handleButtonAgre = (event) => {
         const newArray = [...form.country]
@@ -64,22 +65,30 @@ function Form(){
         setForm({...form, country: newContry})
      }
 
-    const handleSubmit= (event)=>{
-        event.preventDefault()
-        const sendForm = form 
-        const activity = sendForm.country?.map(evento =>{
-            return {
-                name:sendForm.name,
-                img: sendForm.img,
-                difficulty: sendForm.difficulty,
-                duration: sendForm.duration,
-                season: sendForm.season,
-                description: sendForm.description,
-                idCountry: evento
-            }
-        })
-        activity.forEach(elemento=> dispatch(postActivity(elemento)))
-    }
+     const handleSubmit = async (event) => {
+        event.preventDefault();
+        const sendForm = form;
+        const activity = sendForm.country?.map(evento => {
+          return {
+            name: sendForm.name,
+            img: sendForm.img,
+            difficulty: sendForm.difficulty,
+            duration: sendForm.duration,
+            season: sendForm.season,
+            description: sendForm.description,
+            idCountry: evento
+          };
+        });
+        for (let i = 0; i < activity.length; i++) {
+          const element = activity[i];
+          try {
+            const response = await axios.post('http://localhost:3001/activities', element);
+            console.log(response.data);
+          } catch (error) {
+            console.error(error);
+          }
+        }
+      };
     
     return(
         <div>

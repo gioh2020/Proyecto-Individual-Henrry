@@ -67,8 +67,8 @@ function handleFilter(event){
     
 }
 function handleSearchByName(event){ 
-    
     dispatch(searchByname(event))
+    setPagNum(1)
 
  }
     return(
