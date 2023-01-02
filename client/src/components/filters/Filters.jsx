@@ -1,17 +1,25 @@
 import React from "react";
 import { useState } from "react";
 import styles from "./Filter.module.css"
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 
 
 
 
 function Filter(props){
     
-    const country = useSelector((state)=> state.countries)
-    
+    const country = useSelector(state => state.countries);
     const [countryName, setCountryName] = useState('')
+    
+    const elements = [];
 
+    country.forEach(element =>
+    element.activities?.forEach(elementss => {
+        if (!elements.includes(elementss.name)) {
+        elements.push( elementss.name );
+        }
+    })
+    );
 
     const handleInput = (event) =>{
     setCountryName(event.target.value)
@@ -21,24 +29,7 @@ function Filter(props){
     return(
         <div className={styles.filter}>
 
-{/* 
-                    <select name="" id=""  className={styles.select1}>
-                        <option value="">-----</option>
-                        {
-                            country.forEach(element => {
-                               return(
 
-                                   element.activities?.map(elemnt=>{
-                                       console.log(elemnt.name)
-                                       return(
-                                           <option value={elemnt.name} key={elemnt.name}>{elemnt.name}</option>
-                                           )
-                                       })
-                               )
-                                
-                            })
-                         }
-                    </select> */}
 
             <input type="text" onChange={handleInput } placeholder="Search by name"/>
             <button onClick={()=> props.handleSearchByName(countryName)}>Search</button>
@@ -47,6 +38,7 @@ function Filter(props){
             <select 
                 className={styles.select1}
                 onChange={e => props.handleFilter(e) }>
+                <option value="All">----</option>
                 <option value="All">All</option>
                 <option value="Africa">Africa</option>
                 <option value="Antarctic">Antarctic</option>
@@ -60,11 +52,22 @@ function Filter(props){
             <select 
                 className={styles.select1}
                 onChange={e => props.handleFilterByName(e)}>
-                <option value={true}>-----</option>
+                <option value='reset'>-----</option>
                 <option value="nameAz">A-Z</option>
                 <option value="nameZa">Z-A</option>
                 <option value="populationMax">Max-population</option>
                 <option value="populationMin">Min-population</option>
+            </select>
+
+            <label>Activity</label>
+            <select className={styles.select1} onChange={e => props.handleFilterByActivity(e)}>
+                <option value="">-----</option>
+                {elements?.map(el =>{
+                    return(
+                        <option value={el}>{el}</option>
+                    )
+                    
+                })}
             </select>
             
         </div>

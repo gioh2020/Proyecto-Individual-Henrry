@@ -1,8 +1,137 @@
 .forma{
   display: flex;
   flex-direction: column;
-  border: 5px solid;
-  width: 800px;
-  height: 1000px;
-  margin-left: 100px;
+  border: 5px solid purple;
+  width: 25%;
+  height: 650px;
+  margin-top: 100px;
+  border-radius: 40px;
+  background-color: rgb(45, 212, 195);
+  /* justify-content: center; */
+  align-items: center;
+}
+.select1{
+  margin: 0px;
+  margin-left: 5px;
+  border-radius: 5px;
+  width: 80%;
+  text-align: center; 
+  border: solid purple;
+  
+}
+
+.select2{
+  margin: 0px;
+  margin-left: 5px;
+  border-radius: 5px;
+  width: 50px;
+  text-align: center; 
+  border: solid purple;
+}
+
+.select3{
+  margin: 0px;
+  margin-left: 2px;
+  border-radius: 5px;
+  width: 175px;
+  text-align: center; 
+  border: solid purple;
+}
+p{
+  color: red;
+  font-size: 18px;
+  margin: 0px;
+}
+.image{
+  height: 150px;
+  width: 95%;
+  margin: 0px;
+
+}
+.principalDiv{
+  display: flex;
+  justify-content: center;
+
+}
+.countryDiv{
+  margin-top: 30px;
+}
+.activityDiv{
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  width:80%;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  
+}
+.imageDiv{
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  width:80%;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.seasonDiv{
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  width:80%;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.divDificulty{display: flex;
+  flex-direction: row;
+  height: 35px;
+  width:80%;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.divDuration{
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  width:80%;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.labels{
+  color: purple;
+  font-weight: 760;
+  font-size: 17px;
+}
+
+.inputName{
+  height: 20px;
+  width: 120px;
+  margin: 0px;
+  margin-left: 2px;
+}
+.inputImage{
+  height: 20px;
+  width: 138px;
+  margin: 0px;
+
+  margin-left: 2px;
+}
+.inputDuration{
+  height: 20px;
+  width: 42px;
+  margin: 0px;
+  margin-left: 2px;
+}
+.textarea{
+  margin: 0px;
+  margin-top: 20px;
+  width: 220px;
+  height: 95px;
 }

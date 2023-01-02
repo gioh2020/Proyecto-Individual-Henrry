@@ -2,9 +2,11 @@ import React from "react"
 import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import styles from './Form.module.css'
-import { getCharacters, postActivity, filterByname } from "../../actions"
+import { getCharacters, filterByname } from "../../actions"
 import setFormError from "./setError"
 import axios from "axios";
+import activities from "./activities.png"
+import act from "./act.png"
 
 
 function Form(){
@@ -39,6 +41,7 @@ function Form(){
     if(form.name && form.img && form.difficulty&& form.duration&& form.season&& form.description && form.country.length && !errors){
         sub = true
      }else{sub = false} 
+     console.log(sub)
 
     const handleForm = (event => {
        
@@ -66,7 +69,7 @@ function Form(){
      }
 
      const handleSubmit = async (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         const sendForm = form;
         const activity = sendForm.country?.map(evento => {
           return {
@@ -91,59 +94,81 @@ function Form(){
       };
     
     return(
-        <div>
+        <div className={styles.principalDiv}>
 
             <form onSubmit={handleSubmit}className={styles.forma} >
-                <div>
-                <select name="" id=""onChange={  handleButtonAgre} onClick={handleForm} >
-                        <option value="false">-----</option>
-                        {
-                            countries?.map(elemnt=>{
-                                return(
-                                    <option value={elemnt.id} key={elemnt.id} onChange={handleButtonAgre}>{elemnt.name} </option>
+
+                <div className={styles.countryDiv}>
+                <p>{!form.country.length && 'Select countries '}</p>
+                <select onChange={handleButtonAgre} onClick={handleForm} className={styles.select1}>
+                     <option value="false">-----</option>
+                        {countries?.map(elemnt=>{
+                            return(
+                                <option value={elemnt.id} key={elemnt.id} onChange={handleButtonAgre}>{elemnt.name} </option>
                                     )
-                                })
-                            }
+                            })}
                 </select>
                 </div>
-            <div>
-                {
-                    form.country?.map(id=>{
-                        return(
-                            <button onClick={handleDelete} key={id} value={id}>{id}</button>
-                        )
-                    })
-                }
-            </div>
-            <p>{!form.country.length && 'Select country '}</p>
 
-               <div>
-                <label htmlFor="">ActivityName:</label>
+                <div>
+                    {
+                        form.country?.map(id=>{
+                            return(
+                                <button onClick={handleDelete} key={id} value={id}>{id}</button>
+                            )
+                        })
+                    }
+                </div>
+      
+
+               <div className={styles.activityDiv}>
+                <label className={styles.labels} htmlFor="">Activity Name: </label>
                 <input 
+                className={styles.inputName}
                 type="text" 
                 placeholder="Write activity name" 
                 name="name"
                 onChange={handleForm}
                 value={form.name}
                 />
-                <p>{error.name && error.name }</p>
                </div> 
+                <p>{error.name && error.name }</p>
 
-                <div>
-                <label htmlFor="">Image:</label>
+                <div className={styles.imageDiv}>
+                <label className={styles.labels} htmlFor="">Image Link: </label>
                 <input 
+                className={styles.inputImage}
                 type="text" 
                 placeholder="Write image link" 
                 name="img"
                 onChange={handleForm}
                 value={form.img}
                 />
-                <p>{error.img && error.img }</p>
                 </div>
+                <p>{error.img && error.img }</p>
 
-                <div>
-                <label htmlFor="">Difficulty:</label>
+                <div className={styles.seasonDiv}>
+                <label className={styles.labels} htmlFor="">Season: </label>
                 <select 
+                className={styles.select3}
+                type="text" 
+                name="season"
+                onChange={handleForm}
+                value={form.season}
+                > 
+                    <option value="">-----</option>
+                    <option itemType="number" value="Summer">Summer</option>
+                    <option itemType="number" value="Autumn">Autumn</option>
+                    <option itemType="number" value="Winter">Winter</option>
+                    <option itemType="number" value="Spring">Spring</option>
+                </select>
+                </div>
+                <p>{error.season && error.season }</p>
+
+                <div className={styles.divDificulty}>
+                <label className={styles.labels} htmlFor="">Difficulty: </label>
+                <select 
+                className={styles.select2}
                 type="text" 
                 name="difficulty"
                 onChange={handleForm}
@@ -156,40 +181,27 @@ function Form(){
                     <option itemType="number" value="4">4</option>
                     <option itemType="number" value="5">5</option>
                 </select>
-                <p>{error.difficulty && error.difficulty }</p>
                 </div>
+                <p>{error.difficulty && error.difficulty }</p>
 
-                <div>
-                <label htmlFor="">Duration:</label>
+                <div className={styles.divDuration}>
+                <label className={styles.labels} htmlFor="">Duration: </label>
                 <input 
+                className={styles.inputDuration}
                 type="number" 
                 placeholder="Write activity duration 'Hours'" 
                 name="duration"
                 onChange={handleForm}
                 value={form.duration}
                 />
+                </div>
                  <p>{error.duration && error.duration }</p>
-                </div>
 
-                <div>
-                <label htmlFor="">Season:</label>
-                <select 
-                type="text" 
-                name="season"
-                onChange={handleForm}
-                value={form.season}
-                > 
-                    <option value="">-----</option>
-                    <option itemType="number" value="Summer">Summer</option>
-                    <option itemType="number" value="Autumn">Autumn</option>
-                    <option itemType="number" value="Winter">Winter</option>
-                    <option itemType="number" value="Spring">Spring</option>
-                </select>
-                <p>{error.season && error.season }</p>
-                </div>
+               
 
                 <div>
                 <textarea onChange={handleForm} 
+                className={styles.textarea}
                 name="description"
                 placeholder="Write activity description"
                 value={form.description}
@@ -200,9 +212,12 @@ function Form(){
 
 
              
-                <button type='submit' disabled={!sub}  >sumit</button>
+                <button type='submit' disabled={!sub}>submit</button>
+
+                <img className={styles.image} src={activities} alt="" />
 
             </form>
+            {/* <img className={styles.image2} src={act} alt="" /> */}
         </div>
   
      

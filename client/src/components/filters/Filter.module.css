@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     width: 170px;
-    height: 195px;
+    height: 225px;
     background-color: rgb(60, 244, 225);
     margin: 0px;
     margin-left: 12px;
@@ -35,6 +35,7 @@ input{
     text-align: center; 
 }
 button{
+    cursor: pointer;
     border-radius: 5px;
     color: aqua;
     background-color: purple;

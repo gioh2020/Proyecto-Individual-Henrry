@@ -82,6 +82,9 @@ function rootReducer (state = initialState, action){
                                     return 0
                                 })
                             }
+                            if(action.payload === 'reset'){
+                                sortCountries = state.countries
+                            }
                             return {
                                 ...state,
                                 countries: sortCountries
@@ -90,7 +93,26 @@ function rootReducer (state = initialState, action){
                                 return {
                                     ...state,
                                     clocks: action.payload                
-                }
+                                }
+                                case 'FILTER_BY_ACTIVITY':
+                                    const copyActivity = state.allcountries
+                                    const activityFilter = []
+                                    if(action.payload){
+                                        copyActivity.forEach(activity => {
+                                            activity.activities?.forEach(element => {    
+                                              if(element.name === action.payload){
+                                                activityFilter.push(activity)
+                                              }  
+                                          });
+                                         
+                                        })
+                                    }
+                               
+                                    
+                                    return{
+                                        ...state,
+                                        countries: activityFilter
+                                    }
             default:
                 return {...state}   
 

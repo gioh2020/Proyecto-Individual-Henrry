@@ -1,5 +1,5 @@
 import React from "react";
-import {getCharacters, filterByContinent, filterByname, searchByname } from "../../actions";
+import {getCharacters, filterByContinent, filterByname, searchByname, filterByActivity} from "../../actions";
 import {useDispatch, useSelector } from "react-redux"
 import { useEffect,useState } from "react";
 import Cards from "../cards/Cards";
@@ -71,6 +71,12 @@ function handleSearchByName(event){
     setPagNum(1)
 
  }
+ function handleFilterByActivity(event){ 
+    dispatch(filterByActivity(event.target.value))
+    setPagNum(1)
+
+ }
+
     return(
         <div className={styles.filter}>
             <div className={styles.filter2}>
@@ -78,6 +84,7 @@ function handleSearchByName(event){
                 handleFilter={handleFilter}
                 handleFilterByName={handleFilterByName}
                 handleSearchByName={handleSearchByName}
+                handleFilterByActivity={handleFilterByActivity}
             />
             
             <Paginado 
