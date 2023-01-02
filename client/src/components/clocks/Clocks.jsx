@@ -52,7 +52,7 @@ function Clocks(){
         return(
             <div>
                 <div>  
-                    <select name="" id=""onChange={handleInput}>
+                    <select name="" id=""onChange={handleInput} className={styles.select1}>
                         <option value="">-----</option>
                         {
                             country?.map(elemnt=>{
@@ -76,9 +76,13 @@ function Clocks(){
 
                                 <div className={styles.element} >
                                     {hour.clock?.slice(0,2)} 
+                                    <div  className={styles.hour}>
+                                    </div>
                                     <h4 className={styles.elemento}>:</h4> 
                                     {hour.clock?.slice(3,5)}
-                                    {hour.clock?.slice(0,2) > 12? <h6>PM</h6> :<h6> AM</h6>} 
+                                    <div className={styles.hour}>
+                                    {hour.clock?.slice(0,2) > 12? <h6> PM</h6> :<h6> AM</h6>} 
+                                    </div>
                                 </div> 
                             </div>
                         )

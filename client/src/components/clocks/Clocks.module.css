@@ -12,10 +12,10 @@
     flex-direction: row;
     grid-template-columns:30%  auto auto;
     margin: 40px;
-    border: 3px solid rgb(60, 244, 225);
+    border: 4px solid black;
     height: 150px;
     width: 300px;
-    border-radius: 10px ;
+    border-radius: 14px ;
     background-color: purple;
     justify-content: flex-end ;
     
@@ -54,14 +54,20 @@ img{
     align-items: center;
     justify-content: center;
     font-size: 35px;
+    color: rgb(14, 234, 212);
     
    
+  }
+
+  .hour{
+    color: rgb(14, 234, 212);
+    margin-left: 3px;
   }
 
   .element{
     display: flex;
     flex-direction: row;
-    border: 3px solid;
+    border: 3px solid rgb(14, 234, 212);
     width: 160px;
     height: 40px;
     margin-bottom: 5px;
@@ -86,9 +92,15 @@ img{
     height: 50px;
     overflow: hidden;
     line-height: 23px;
+    color: white;
   }
 
-  select{
-    margin-top: 300px;
+  .select1{
+    margin-top: 150px;
+    border-radius: 5px;
+    width: 25%;
+    text-align: center; 
+    border: solid purple;
+  
   }
 
