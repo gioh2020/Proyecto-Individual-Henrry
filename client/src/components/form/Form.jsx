@@ -85,7 +85,7 @@ function Form(){
         for (let i = 0; i < activity.length; i++) {
           const element = activity[i];
           try {
-            const response = await axios.post('http://localhost:3001/activities', element);
+            const response = await axios.post('https://proyecto-individual-henrry-production.up.railway.app/activities', element);
             console.log(response.data);
           } catch (error) {
             console.error(error);
