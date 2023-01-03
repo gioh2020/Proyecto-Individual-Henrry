@@ -2,12 +2,10 @@
    display: flex;
    flex-direction: column;
    justify-content: center;
-    margin: 40px;
     width: 100%;
     align-items: center;
     margin-top: 100px;
-    margin-right: 50px;
-    margin-left: 50px;
+ 
 }
 .subDiv{
     display: flex;
@@ -31,47 +29,61 @@
     height: 400px;
     width: 600px;
     margin: 0px;
+    border: 3.5px  solid rgb(60, 198, 213);
+    border-right: none;
+    border-bottom: 4px solid purple;
     
 }
 .infoDiv{
-    border: 2px solid;
+    border: 3.5px  solid rgb(60, 198, 213);
+    border-left: none;
     height: 400px;
     width: 370px;
     text-align: left;
+    backdrop-filter: blur(7px);
+    border-bottom: 4px solid purple;
+    
 
 }
 .activitiesDiv{
     display: flex;
     flex-direction: row;
-   
-    /* width: 500px; */
+    border: 3.5px  solid rgb(60, 198, 213);
+    width: 970px;
+    justify-content: center;
+    backdrop-filter: blur(7px);
+    border-top: none;
 }
 
 .activityDiv{
     display: flex;
+    border-radius: 12px;
     flex-direction: column;
-    border: 2px solid black;
-    margin-right: 5px;
-    height: 260px;
-    width: 180px;
+    margin: 10px;
+    height: 280px;
+    width: 195px;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 1s linear;
-    perspective: 100px;
+    transition: transform 0.5s linear;
+    perspective: 600px;
 }
 .activityDiv .front,
 .activityDiv .back{
     width: 100%;
     height: 100%;
+    
 
     backface-visibility: hidden;
 }
-
 .activityDiv .front{
-    background-color: aqua;
+    background-color:purple;
+    border-radius: 12px;
+    border: 3px solid rgb(71, 209, 219);
 }
 .activityDiv .back{
-    background-color: blueviolet;
+    background-color: rgb(69, 224, 224);
+    border-radius: 12px; 
+    border: 3px solid purple;
 }
 .activityDiv .front{
     position: absolute;
@@ -84,8 +96,16 @@
 
 
 .imageActivity{
-    height: 120px ;
-    width: 120px;
+    height: 130px ;
+    width: 130px;
     margin: 0px;
-    margin-left: 30px;
+   
+}
+
+.descriptionText{
+    color:  white;
+    font-size: 100%;
+    text-align: start;
+    margin: 3px;
+    margin-top: 5px;
 }

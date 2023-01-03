@@ -10,6 +10,11 @@
   /* justify-content: center; */
   align-items: center;
 }
+@media (max-width: 700px){
+  .forma{
+    width: 60%;
+  }
+}
 .select1{
   margin: 0px;
   margin-left: 5px;
@@ -132,6 +137,7 @@ p{
 .textarea{
   margin: 0px;
   margin-top: 20px;
-  width: 220px;
+  margin-bottom: 10px;
+  width: 95%;
   height: 95px;
 }

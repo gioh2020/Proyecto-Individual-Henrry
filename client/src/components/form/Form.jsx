@@ -212,7 +212,7 @@ function Form(){
 
                
 
-                <div>
+                
                 <textarea onChange={handleForm} 
                 className={styles.textarea}
                 name="description"
@@ -221,7 +221,7 @@ function Form(){
                 maxLength="300"
                  >hola</textarea>
                  <p>{error.description && error.description }</p>
-                </div>
+                
 
 
              

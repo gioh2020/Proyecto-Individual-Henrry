@@ -12,10 +12,12 @@ function NavBar (){
                 <img src={map} className={styles.img} alt="" />
                 <NavLink className={styles.hc}  to="/home">HENRY COUNTRIES</NavLink>
             </div>
-          
+            <div className={styles.subNav}>
                 <NavLink className={styles.nav1} to="/home">HOME</NavLink>
                 <NavLink className={styles.nav2}  to="/Clocks" >CLOCKS</NavLink>
                 <NavLink className={styles.nav3} to= "/about">CREATE TURISTIC ACTIVITY</NavLink>
+            </div>
+          
           
         </div>
     )

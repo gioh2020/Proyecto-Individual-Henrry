@@ -40,6 +40,7 @@ function CountryDetail(){
 
         </div>
               <div className={styles.activitiesDiv}>{countryDeatil.activities?.map((activity)=>{
+                console.log(typeof activity.description )
                     return(
                         <div className={styles.activityDiv}>
                             <div className={styles.back}>
@@ -51,7 +52,7 @@ function CountryDetail(){
                             </div>
 
                             <div className={styles.front}>
-                            <p>Description: {activity.description}</p>
+                            <p className={styles.descriptionText}>Description: {activity.description}</p>
                             </div>
 
                         </div>

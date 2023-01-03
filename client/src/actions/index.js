@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function getCharacters(){
     return async function(dispatch){
-        var json = await axios.get("http://localhost:3001/countries");
+        var json = await axios.get("/countries");
         return dispatch({
             type: 'GET_COUNTRIES',
             payload: json.data
@@ -25,7 +25,7 @@ export function filterByname(payload){
 }
 export function searchByname(payload){
     return async function(dispatch){
-        var json = await axios.get(`http://localhost:3001/countries?name=${payload}`);
+        var json = await axios.get(`/countries?name=${payload}`);
         return dispatch({
             type: 'GET_COUNTRY',
             payload: json.data
@@ -35,7 +35,7 @@ export function searchByname(payload){
 }
 export function searchById(payload){
     return async function(dispatch){
-        var json = await axios.get(`http://localhost:3001/countries/${payload}`);
+        var json = await axios.get(`/countries/${payload}`);
         return dispatch({
             type: 'GET_COUNTRY_ID',
             payload: json.data
@@ -55,7 +55,7 @@ export function searchClocks(payload){
 export function postActivity(payload){
     console.log(payload)
     return async function(dispatch){
-        var response = await axios.post('http://localhost:3001/activities', payload)
+        var response = await axios.post('/activities', payload)
         return response
     }
 }

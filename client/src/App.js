@@ -6,14 +6,13 @@ import NavBar from './components/navBAr/NavBar';
 import CountryDetail from './components/countryDetail/CountryDetail.jsx';
 import Clocks from './components/clocks/Clocks';
 import Form from "./components/form/Form";
-import Error404 from "./components/404/404"
+import axios from 'axios';
+axios.defaults.baseURL = "http://localhost:3001/"
+
 
 
 function App() {
   return (
-    // <div className="App">
-    //   <h1>Henry Countries</h1>
-    // </div>
     <BrowserRouter>
     <Switch>
       <div className='App'>
@@ -23,7 +22,6 @@ function App() {
         <Route exact path = "/infocountry/:Id" component={CountryDetail}/>
         <Route exact path = "/Clocks" component={Clocks}/>
         <Route exact path="/about" component={Form} />
-        {/* <Route  path="*" component={Error404}/> */}
         </body>
         
       </div>
