@@ -2,13 +2,13 @@ import React from "react";
 import styles from "./Paginado.module.css"
 
 
-function Paginado({countriesPerPag,allCountries,paginado}){
+function Paginado({countriesPerPag,allCountries,paginado,pagNum}){
     const pageNumbs = []
     for(let i=1; i <= Math.ceil(allCountries/countriesPerPag); i++){
         pageNumbs.push(i)
 
     }
-
+// console.log(pagNum)
     return(
         <div className={styles.paginado2 }  >
             <ul className={styles.paginado}>
@@ -16,13 +16,11 @@ function Paginado({countriesPerPag,allCountries,paginado}){
                     pageNumbs &&
                      pageNumbs.map(num=>{
                         return(
+                     
                         <li className={styles.cur} key={num}
                         onClick={()=> paginado(num)}>
-
-                            <a 
-                             
-                            >{num}</a>
-                        </li>
+                            {num===pagNum? <p className={styles.p}>{num}</p> : <p className={styles.p1}>{num}</p> }
+                     </li>
                         )
                      })
                 }

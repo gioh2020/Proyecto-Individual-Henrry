@@ -91,6 +91,7 @@ function handleSearchByName(event){
                 allCountries={allCountries.length}
                 countriesPerPag={countriesPerPag}
                 paginado={paginado}
+                pagNum={pagNum}
                 
             />
             <img src={globo} alt=""  className={styles.img}/>

@@ -33,7 +33,7 @@ function Filter(props){
 
             <input type="text" onChange={handleInput } placeholder="Search by name"/>
             <button onClick={()=> props.handleSearchByName(countryName)}>Search</button>
-            <hr />
+      
             <label htmlFor="">Filter By Continent</label>
             <select 
                 className={styles.select1}

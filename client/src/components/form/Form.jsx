@@ -91,12 +91,25 @@ function Form(){
             console.error(error);
           }
         }
+        
       };
+
+      const handleSub = (event => {
+       
+        
+        setForm({...form, [event.target.name]: event.target.value})
+        setError(setFormError({
+            ...form,[event.target.name]: event.target.value}))  
+           setTimeout(() => {
+            
+           }, ); 
+           
+    })
     
     return(
         <div className={styles.principalDiv}>
 
-            <form onSubmit={handleSubmit}className={styles.forma} >
+            <form onSubmit={handleSub}className={styles.forma} >
 
                 <div className={styles.countryDiv}>
                 <p>{!form.country.length && 'Select countries '}</p>
@@ -212,7 +225,7 @@ function Form(){
 
 
              
-                <button type='submit' disabled={!sub}>submit</button>
+                <button type='submit' disabled={!sub}>submit</button><button onClick={handleSubmit}>send</button>
 
                 <img className={styles.image} src={activities} alt="" />
 

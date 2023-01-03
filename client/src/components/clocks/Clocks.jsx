@@ -37,13 +37,13 @@ function Clocks(){
     const handleClick = (event) => {  
         setTimeout(() => {
             if(event.target.value !== "")setInfoClocks([...infoClocks, allClocks]);
-        },1500);
+        },1800);
         
     }
 
     const handleInput = (event) =>{ 
-        if(event.target.value !== ""){
-            dispatch(searchClocks(event.target.value))
+       if(event.target.value !== ""){
+        dispatch(searchClocks(event.target.value))
             setRefre(event.target.value)
         };
     }
@@ -51,7 +51,7 @@ function Clocks(){
 
         return(
             <div>
-                <div>  
+                <div className={styles.searchDiv}>  
                     <select name="" id=""onChange={handleInput} className={styles.select1}>
                         <option value="">-----</option>
                         {
