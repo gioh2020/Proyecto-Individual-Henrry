@@ -6,7 +6,7 @@ import { getCharacters, filterByname } from "../../actions"
 import setFormError from "./setError"
 import axios from "axios";
 import activities from "./activities.png"
-import act from "./act.png"
+
 
 
 function Form(){
@@ -41,18 +41,14 @@ function Form(){
     if(form.name && form.img && form.difficulty&& form.duration&& form.season&& form.description && form.country.length && !errors){
         sub = true
      }else{sub = false} 
-     console.log(sub)
 
     const handleForm = (event => {
-       
-        
         setForm({...form, [event.target.name]: event.target.value})
         setError(setFormError({
             ...form,[event.target.name]: event.target.value}))  
            setTimeout(() => {
             
-           }, ); 
-           
+           }, );   
     })
 
 
@@ -69,7 +65,7 @@ function Form(){
      }
 
      const handleSubmit = async (event) => {
-        // event.preventDefault();
+        event.preventDefault()
         const sendForm = form;
         const activity = sendForm.country?.map(evento => {
           return {
@@ -84,32 +80,22 @@ function Form(){
         });
         for (let i = 0; i < activity.length; i++) {
           const element = activity[i];
+          console.log(element)
           try {
-            const response = await axios.post('https://proyecto-individual-henrry-production.up.railway.app/activities', element);
+            const response = await axios.post('/activities', element);
             console.log(response.data);
           } catch (error) {
             console.error(error);
           }
-        }
+        } 
         
       };
 
-      const handleSub = (event => {
-       
-        
-        setForm({...form, [event.target.name]: event.target.value})
-        setError(setFormError({
-            ...form,[event.target.name]: event.target.value}))  
-           setTimeout(() => {
-            
-           }, ); 
-           
-    })
     
     return(
         <div className={styles.principalDiv}>
 
-            <form onSubmit={handleSub}className={styles.forma} >
+            <form onSubmit={handleSubmit}className={styles.forma} >
 
                 <div className={styles.countryDiv}>
                 <p>{!form.country.length && 'Select countries '}</p>
@@ -225,12 +211,13 @@ function Form(){
 
 
              
-                <button type='submit' disabled={!sub}>submit</button><button onClick={handleSubmit}>send</button>
+                <button type='submit' disabled={!sub} onClick={handleSubmit}>submit</button>
+               
 
                 <img className={styles.image} src={activities} alt="" />
 
             </form>
-            {/* <img className={styles.image2} src={act} alt="" /> */}
+        
         </div>
   
      

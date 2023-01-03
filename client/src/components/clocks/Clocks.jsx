@@ -62,7 +62,7 @@ function Clocks(){
                                 })
                             }
                     </select>
-                    <button onClick={handleClick} value = {refre}>Serach</button>
+                    <button onClick={handleClick} value = {refre}>Search</button>
                 </div>
 
                 <div className={styles.infoClock}>
