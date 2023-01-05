@@ -18,7 +18,7 @@ function NavBar (){
             <div className={styles.subNav}>
                 <NavLink className={styles.nav1} to="/home">HOME</NavLink>
                 <NavLink className={styles.nav2}  to="/Clocks" >CLOCKS</NavLink>
-                <NavLink className={styles.nav3} to= "/about">CREATE TURISTIC ACTIVITY</NavLink>
+                <NavLink className={styles.nav3} to= "/about">CREATE TOURISTIC ACTIVITY</NavLink>
             </div>
           
           

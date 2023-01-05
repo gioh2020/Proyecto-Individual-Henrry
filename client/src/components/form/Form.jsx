@@ -65,7 +65,7 @@ function Form(){
      }
 
      const handleSubmit = async (event) => {
-        event.preventDefault()
+        // event.preventDefault()
         const sendForm = form;
         const activity = sendForm.country?.map(evento => {
           return {
