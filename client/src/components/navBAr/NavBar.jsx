@@ -2,10 +2,13 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import styles from "./Navbar.module.css"
 import map from "./map.png"
+import { useLocation } from "react-router-dom";
 
 
 
 function NavBar (){
+    const navigate = {useLocation}
+    console.log(navigate)
     return(
         <div className={styles.navBar}>
             <div className={styles.hcDiv}>
