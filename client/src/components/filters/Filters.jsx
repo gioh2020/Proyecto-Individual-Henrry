@@ -10,7 +10,11 @@ function Filter(props){
     
     const country = useSelector(state => state.countries);
     const [countryName, setCountryName] = useState('')
-    const [resetInput, setResetInput] = useState('reset')
+    const [resetInput, setResetInput] = useState({
+        input:'all' ,
+        order: 'reset',
+        activity: "reset"
+    })
     
     const elements = [];
 
@@ -24,25 +28,26 @@ function Filter(props){
 
     const handleInput = (event) =>{
     setCountryName(event.target.value)
+    console.log("name", event.target.name)
+    console.log("value", event.target.value)
+    setResetInput({...resetInput, [event.target.name]: event.target.value})
     }
-    const handleResetInput = (event) =>{
-        setResetInput(event.target.value)
-        }
+  
    
 
     return(
         <div className={styles.filter}>
 
 
-
+{/* por aca es senor */}
             <input type="text" onChange={handleInput } placeholder="Search by name"/>
             <button onClick={()=> props.handleSearchByName(countryName)}>Search</button>
       
             <label htmlFor="">Filter By Continent</label>
-            <select 
+            <select
                 className={styles.select1}
-                onChange={e => props.handleFilter(e) }
-                onSelect={handleResetInput}
+                onChange={e => props.handleFilter(e)}
+                
                >
                 <option value="All">----</option>
                 <option value="All">All</option>
@@ -56,10 +61,9 @@ function Filter(props){
 
             <label> Order</label>
             <select 
-                value={resetInput}
                 className={styles.select1}
                 onChange={e => props.handleFilterByName(e)}
-                onSelect={handleResetInput}>
+                >
                 <option value="reset">-----</option>
                 <option value="nameAz">A-Z</option>
                 <option value="nameZa">Z-A</option>
@@ -68,7 +72,9 @@ function Filter(props){
             </select>
 
             <label>Activity</label>
-            <select value={resetInput} className={styles.select1} onSelect={handleResetInput} onChange={e => props.handleFilterByActivity(e)}>
+            <select 
+             className={styles.select1}  
+             onChange={e => props.handleFilterByActivity(e)}>
                 <option value="reset" >-----</option>
                 {elements?.map(el =>{
                     return(

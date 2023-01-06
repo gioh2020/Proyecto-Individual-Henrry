@@ -16,6 +16,8 @@
     .filter{
         width: 50%;
         height: 240px;
+        border: 2px solid purple;
+        border-bottom: none;
     }
   }
 .select1{

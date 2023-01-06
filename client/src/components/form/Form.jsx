@@ -2,7 +2,7 @@ import React from "react"
 import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import styles from './Form.module.css'
-import { getCharacters, filterByname } from "../../actions"
+import { getCountries, filterByname } from "../../actions"
 import setFormError from "./setError"
 import axios from "axios";
 import activities from "./activities.png"
@@ -11,7 +11,7 @@ import activities from "./activities.png"
 
 function Form(){
     const dispatch= useDispatch()
-    useEffect(()=>{dispatch(getCharacters())},[])
+    useEffect(()=>{dispatch(getCountries())},[])
     const countries = useSelector((state)=>state.countries)
     dispatch(filterByname("nameAz"))
 

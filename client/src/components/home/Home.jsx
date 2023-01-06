@@ -1,12 +1,12 @@
 import React from "react";
-import {getCharacters, filterByContinent, filterByname, searchByname, filterByActivity} from "../../actions";
+import {getCountries, filterByContinent, filterByname, searchByname, filterByActivity} from "../../actions";
 import {useDispatch, useSelector } from "react-redux"
 import { useEffect,useState } from "react";
 import Cards from "../cards/Cards";
 import Paginado from "../paginado/Paginado";
 import styles from "./Home.module.css"
 import Filter from "../filters/Filters";
-import globo from "./globo2.png"
+
 
 
 //  indice  0  1  2  3  4  5  6  7  8  9   10  11  12  13  14  15  16  17  18  19
@@ -35,7 +35,7 @@ const paginado = (pagNum) =>{
     setPagNum(pagNum)
        
 }
-useEffect(()=>{dispatch(getCharacters())},[])
+useEffect(()=>{dispatch(getCountries())},[])
 
 
 function handleInput(event){

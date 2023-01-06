@@ -42,7 +42,7 @@
 
 .paginado2{
     width: 170px;
-    height: 220px;
+    height: 250px;
     padding: 0px;
     margin: 0px;
     background-color:  rgb(60, 244, 225);
@@ -55,7 +55,8 @@
 @media (max-width: 685px){
     .paginado2{
         width: 50%;
-       
+        border: 2px solid purple;
+        border-top: none;
     }
   }
 .p{

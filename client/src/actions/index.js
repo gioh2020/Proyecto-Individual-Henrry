@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export function getCharacters(){
+export function getCountries(){
     return async function(dispatch){
         var json = await axios.get("/countries");
         return dispatch({

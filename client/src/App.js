@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import {BrowserRouter, Route, Switch,  useLocation} from "react-router-dom"
+import {Route, Switch} from "react-router-dom"
 import Home from './components/home/Home';
 import NavBar from './components/navBAr/NavBar';
 import CountryDetail from './components/countryDetail/CountryDetail.jsx';

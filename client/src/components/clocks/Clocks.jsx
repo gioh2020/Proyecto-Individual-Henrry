@@ -1,20 +1,19 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { searchClocks, getCharacters, filterByname} from "../../actions";
+import { searchClocks, getCountries, filterByname} from "../../actions";
 import styles from './Clocks.module.css'
 import clock from './images/pngeggg.png'
-import { useLocation } from 'react-router';
 
 
 function Clocks(){
-    const location = {useLocation}
-    console.log("--",location.pathname)
+   
+  
     const dispatch = useDispatch()
     const clocks = useSelector((state)=>state.clocks)
     const country = useSelector((state)=> state.countries)
 
-    useEffect(()=>{dispatch(getCharacters())},[])
+    useEffect(()=>{dispatch(getCountries())},[])
     dispatch(filterByname("nameAz"))
 
     
@@ -24,8 +23,6 @@ function Clocks(){
 
     let countryClock = clocks.datetime?.split(' ')
 
-
-   
  
     const region = country?.find((region)=>region.name === refre)
 
@@ -37,10 +34,7 @@ function Clocks(){
         }
     
     const handleClick = (event) => {  
-        setTimeout(() => {
             if(event.target.value !== "")setInfoClocks([...infoClocks, allClocks]);
-        },1800);
-        
     }
 
     const handleInput = (event) =>{ 

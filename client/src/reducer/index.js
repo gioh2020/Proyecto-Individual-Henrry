@@ -29,7 +29,7 @@ function rootReducer (state = initialState, action){
                 
                     case 'FILTER_BY_CONTINENT':
                       
-                        const copyCountries = state.countries
+                        const copyCountries = state.allcountries
                         const continentFilter = action.payload === "All"? state.allcountries :
                         copyCountries.filter(continent => continent.continent === action.payload)
                         return{
