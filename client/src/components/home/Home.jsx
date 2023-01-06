@@ -94,7 +94,7 @@ function handleSearchByName(event){
                 pagNum={pagNum}
                 
             />
-            <img src={globo} alt=""  className={styles.img}/>
+            {/* <img src={globo} alt=""  className={styles.img}/> */}
            
             </div>
 

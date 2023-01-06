@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { searchClocks, getCharacters, filterByname} from "../../actions";
 import styles from './Clocks.module.css'
 import clock from './images/pngeggg.png'
+import { useLocation } from 'react-router';
 
 
 function Clocks(){
-
+    const location = {useLocation}
+    console.log("--",location.pathname)
     const dispatch = useDispatch()
     const clocks = useSelector((state)=>state.clocks)
     const country = useSelector((state)=> state.countries)

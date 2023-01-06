@@ -5,8 +5,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
+  
+    /* height: 100%; */
+    background-image: url('./map.png');
+    background-repeat: no-repeat;
+    background-size: 100% 77%;
+    background-position-y: 80px;
+    background-position-x: -80px;
+    background-attachment: fixed;
+
+   
+        
+
+}
+@media (max-width: 450px){
+  body{
+    background-repeat:repeat-y ;
+    background-position: 0 0, 0 20%, 0 100%;
+    background-position-y: 220px;
+    background-position-x: 0px;
+    background-attachment: fixed;
+    background-size: 100% 20%;
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -10,6 +10,7 @@ function Filter(props){
     
     const country = useSelector(state => state.countries);
     const [countryName, setCountryName] = useState('')
+    const [resetInput, setResetInput] = useState('reset')
     
     const elements = [];
 
@@ -24,6 +25,9 @@ function Filter(props){
     const handleInput = (event) =>{
     setCountryName(event.target.value)
     }
+    const handleResetInput = (event) =>{
+        setResetInput(event.target.value)
+        }
    
 
     return(
@@ -37,7 +41,9 @@ function Filter(props){
             <label htmlFor="">Filter By Continent</label>
             <select 
                 className={styles.select1}
-                onChange={e => props.handleFilter(e) }>
+                onChange={e => props.handleFilter(e) }
+                onSelect={handleResetInput}
+               >
                 <option value="All">----</option>
                 <option value="All">All</option>
                 <option value="Africa">Africa</option>
@@ -50,9 +56,11 @@ function Filter(props){
 
             <label> Order</label>
             <select 
+                value={resetInput}
                 className={styles.select1}
-                onChange={e => props.handleFilterByName(e)}>
-                <option value='reset'>-----</option>
+                onChange={e => props.handleFilterByName(e)}
+                onSelect={handleResetInput}>
+                <option value="reset">-----</option>
                 <option value="nameAz">A-Z</option>
                 <option value="nameZa">Z-A</option>
                 <option value="populationMax">Max-population</option>
@@ -60,11 +68,11 @@ function Filter(props){
             </select>
 
             <label>Activity</label>
-            <select className={styles.select1} onChange={e => props.handleFilterByActivity(e)}>
-                <option value="">-----</option>
+            <select value={resetInput} className={styles.select1} onSelect={handleResetInput} onChange={e => props.handleFilterByActivity(e)}>
+                <option value="reset" >-----</option>
                 {elements?.map(el =>{
                     return(
-                        <option value={el}>{el}</option>
+                        <option key={el} value={el}>{el}</option>
                     )
                     
                 })}

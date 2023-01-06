@@ -11,6 +11,14 @@
     
     
 }
+@media (max-width: 685px){
+    .paginado{
+        display: grid;
+        grid-template-columns: auto auto auto ;
+    
+    }
+  }
+
 .cur{
     cursor: pointer;
     list-style: none;
@@ -23,6 +31,14 @@
     color: rgb(16, 141, 135);
     justify-self: center;
 }
+@media (max-width: 685px){
+    .cur{
+        border: 2px solid purple;
+        margin-left: 3px;
+        
+    
+    }
+  }
 
 .paginado2{
     width: 170px;
@@ -36,6 +52,12 @@
     border-bottom-right-radius: 10px;
    
 } 
+@media (max-width: 685px){
+    .paginado2{
+        width: 50%;
+       
+    }
+  }
 .p{
     background-color: blueviolet;
     border-radius: 10px;

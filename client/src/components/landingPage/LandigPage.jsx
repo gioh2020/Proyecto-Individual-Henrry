@@ -10,7 +10,8 @@ import icon4 from './icons/icon4.png'
 
 function LandingPage () {
     return(
-        <div className={style.principalDiv}>
+        <div className={style.father}>
+  <div className={style.principalDiv}>
             <div className={style.container}>
                
                 <div className={style.welcome}>
@@ -52,12 +53,15 @@ function LandingPage () {
                     <div className={style.divs}>
                         <img src={icon4} alt='icon1' />
                         <h4>Clocks</h4>
-                        <p>You can see world's clocks</p>
+                        <p>You can see the differents world's clocks</p>
                     </div>
                 </div>
             </div>
            
         </div>
+            
+        </div>
+      
         )
 
 }

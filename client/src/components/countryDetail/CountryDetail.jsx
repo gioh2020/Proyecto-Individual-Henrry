@@ -19,28 +19,22 @@ function CountryDetail(){
     
     return(
         <div className={styles.principalDiv}>    
-        <div className={styles.subDiv}>
+            <div className={styles.subDiv}>
+                <img className={styles.flagDiv} src={countryDeatil.flag} alt="" />
 
-              <img className={styles.flagDiv} src={countryDeatil.flag} alt="" />
-        <div className={styles.infoDiv}>
-              <h1>{countryDeatil.name}</h1>
-              <h2>Code: {countryDeatil.id}</h2>
-              <h2>Capital: {countryDeatil.capital}</h2>
-              <h2>Continent: {countryDeatil.continent}</h2>
-              <h2>Subregion: {countryDeatil.subregion}</h2>
-
-
-              <div className={styles.imageDiv}>
-              <h2>Population: {new Intl.NumberFormat('es-MX').format(countryDeatil.population)}</h2>
-              <img className={styles.image} src={people} alt="" />
-              </div>
-
-              <h2>Area: {new Intl.NumberFormat('es-MX').format(countryDeatil.area) } km²</h2>
-        </div >
-
-        </div>
-              <div className={styles.activitiesDiv}>{countryDeatil.activities?.map((activity)=>{
-                console.log(typeof activity.description )
+                <div className={styles.infoDiv}>
+                    <h1>{countryDeatil.name}</h1>
+                    <h2>Code: {countryDeatil.id}</h2>
+                    <h2>Capital: {countryDeatil.capital}</h2>
+                    <h2>Continent: {countryDeatil.continent}</h2>
+                    <h2>Subregion: {countryDeatil.subregion}</h2>
+                    <div className={styles.imageDiv}>
+                        <h2 className={styles.h2}>Population: {new Intl.NumberFormat('es-MX').format(countryDeatil.population)}</h2>
+                    </div>
+                    <h2>Area: {new Intl.NumberFormat('es-MX').format(countryDeatil.area) } km²</h2>
+                    
+                 </div >
+                 <div className={styles.activitiesDiv}>{countryDeatil.activities?.map((activity)=>{
                     return(
                         <div className={styles.activityDiv}>
                             <div className={styles.back}>
@@ -59,7 +53,9 @@ function CountryDetail(){
                      )
                      })
                   }
-              </div>      
+              </div> 
+            </div>
+                  
         </div>
     )
 }

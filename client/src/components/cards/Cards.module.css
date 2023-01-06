@@ -28,6 +28,14 @@
     
    
 }
+@media (max-width: 768px){
+    .card{
+        height:300px;
+        width: 200px;
+        margin: 10px;
+    
+    }
+  }
 .image{
     height: 120px;
     width: 160px;
@@ -60,6 +68,12 @@
     font-size: 130% ;
     font-size-adjust: inherit;
 }
+@media (max-width: 768px){
+    .textName{
+        margin-top: 10px;
+    
+    }
+  }
 .textContinent{
     margin: 0px;
     font-style: oblique;

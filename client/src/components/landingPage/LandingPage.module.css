@@ -5,7 +5,7 @@
     height: 100%;
     align-items: left;
     text-align: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 @media (max-width: 740px){
@@ -33,12 +33,12 @@
     text-align: center;
     margin-top: 4%;
     width: 100%;
-    height: 400px;
+    height: 450px;
 }
-@media (max-width: 740px){
+@media (max-width: 768px){
     .container{
-        display: grid;
-        grid-template-columns: auto;
+        display: flex;
+        flex-direction: column;
         margin-top: 6%;
         margin-left: 2px;
        
@@ -50,11 +50,12 @@
     width: 100%;
     height: 320px;
     margin-top: 60px;
+    
 }
 @media (max-width: 768px){
     .img{
-        width: 0px;
-        height: 0px;
+        width: 300px;
+        height: 100px;
         margin: 0px;
        
     }
@@ -81,7 +82,7 @@
     justify-content: flex-start;
     margin: 0px;
 }
-@media (max-width: 400px){
+@media (max-width: 450px){
     .tittle{
         font-size: 60px;
         text-justify: auto;
@@ -215,8 +216,9 @@
 }
 @media (max-width: 750px){
     .divs p{
-        margin: 4px;
-        width: 100%;
+        margin: 2px;
+        width: 96%;
+        
     }
 }
 .pAddTouristicActivity {

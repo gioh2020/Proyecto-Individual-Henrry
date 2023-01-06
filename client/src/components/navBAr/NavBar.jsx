@@ -7,8 +7,8 @@ import { useLocation } from "react-router-dom";
 
 
 function NavBar (){
-    const navigate = {useLocation}
-    console.log(navigate)
+    const location = {useLocation}
+    console.log("+++",location.pathname)
     return(
         <div className={styles.navBar}>
             <div className={styles.hcDiv}>

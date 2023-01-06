@@ -65,7 +65,7 @@ function Form(){
      }
 
      const handleSubmit = async (event) => {
-        // event.preventDefault()
+        event.preventDefault()
         const sendForm = form;
         const activity = sendForm.country?.map(evento => {
           return {
@@ -88,6 +88,17 @@ function Form(){
             console.error(error);
           }
         } 
+
+        setForm({
+            name: '',
+            img: '',
+            difficulty: 0,
+            duration: 0,
+            season: '',
+            description: '',
+            country: [],
+            
+        }) 
         
       };
 
@@ -204,7 +215,7 @@ function Form(){
                 name="description"
                 placeholder="Write activity description"
                 value={form.description}
-                maxLength="300"
+                maxLength="295"
                  >hola</textarea>
                  <p>{error.description && error.description }</p>
                 
@@ -214,7 +225,7 @@ function Form(){
                 <button type='submit' disabled={!sub} onClick={handleSubmit}>submit</button>
                
 
-                <img className={styles.image} src={activities} alt="" />
+                <img className={styles.image} src={activities} alt="" /> 
 
             </form>
         
