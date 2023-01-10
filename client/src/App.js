@@ -8,8 +8,8 @@ import Clocks from './components/clocks/Clocks';
 import Form from "./components/form/Form";
 import LandingPage from './components/landingPage/LandigPage';
 import axios from 'axios';
-// axios.defaults.baseURL = "https://proyecto-individual-henrry-production.up.railway.app/"
-axios.defaults.baseURL = "http://localhost:3001/" 
+axios.defaults.baseURL = "https://proyecto-individual-henrry-production.up.railway.app/"
+// axios.defaults.baseURL = "http://localhost:3001/" 
 
 
 
