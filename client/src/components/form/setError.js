@@ -8,7 +8,7 @@ function setFormError(data){
     else if(!regex.test(data.img)) errors.img = 'You must write a valid link';
     else if(!data.season) errors.season ='You must selct a state';
     else if(!data.difficulty) errors.difficulty = 'Your must enter a value'
-    else if(!data.duration) errors.duration = 'Your must enter a value un valor'
+    else if(!data.duration) errors.duration = 'Your must enter a value'
     else if(data.duration === '0') errors.duration = 'You must enter a value equal to or greater than 1h'
     else if(data.description.length< 20) errors.description = 'Must contain more than 20 characters'
     return errors
