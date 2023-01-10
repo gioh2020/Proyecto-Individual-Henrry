@@ -6,7 +6,6 @@ const getApiAllInfo = async () => {
     try {
         const getCountriesInfoFromApi = await axios.get('https://restcountries.com/v3/all');
         const allCountries = await Country.findAll()
-        console.log(allCountries.length)
         
         if(allCountries.length == 250){
             return

@@ -8,22 +8,19 @@ function Paginado({countriesPerPag,allCountries,paginado,pagNum}){
         pageNumbs.push(i)
 
     }
-// console.log(pagNum)
+    
     return(
         <div className={styles.paginado2 }  >
             <ul className={styles.paginado}>
-                {
-                    pageNumbs &&
-                     pageNumbs.map(num=>{
-                        return(
-                     
-                        <li className={styles.cur} key={num}
+                {pageNumbs?.map(num=>{
+                    return(
+                        <li 
+                        className={styles.cur} key={num}
                         onClick={()=> paginado(num)}>
                             {num===pagNum? <p className={styles.p}>{num}</p> : <p className={styles.p1}>{num}</p> }
-                     </li>
+                        </li>
                         )
-                     })
-                }
+                    })}
             </ul>
         </div>
     )

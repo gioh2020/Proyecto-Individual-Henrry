@@ -107,12 +107,11 @@ function rootReducer (state = initialState, action){
                                          
                                         })
                                     }
-                               
-                                    
                                     return{
                                         ...state,
                                         countries: activityFilter
-                                    }
+                                    }        
+                        
             default:
                 return {...state}   
 

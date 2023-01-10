@@ -1,5 +1,5 @@
 import React from "react";
-import {getCountries, filterByContinent, filterByname, searchByname, filterByActivity} from "../../actions";
+import {getCountries, filterByContinent, filterByname, searchByname, filterByActivity, } from "../../actions";
 import {useDispatch, useSelector } from "react-redux"
 import { useEffect,useState } from "react";
 import Cards from "../cards/Cards";
@@ -8,99 +8,78 @@ import styles from "./Home.module.css"
 import Filter from "../filters/Filters";
 
 
-
-//  indice  0  1  2  3  4  5  6  7  8  9   10  11  12  13  14  15  16  17  18  19
-// countri [1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21]
-// pagN 1   0                              10   
-// pagN 2                                  10                                      20
 function Home(){
     const dispatch = useDispatch();
+    useEffect(()=>{dispatch(getCountries())},[])
     const allCountries = useSelector((state)=> state.countries)
 
     const [pagNum, setPagNum] = useState(1)
     const [pagOrder, setPagOrder] = useState(false)
     const [countriesPerPag, ] = useState(12)
-    const idxLastCountry = pagNum * countriesPerPag // 1*10 = 10   2 * 10 = 20
-    const idxFirstCountry = idxLastCountry - countriesPerPag // 20 - 10 = 10
+    const idxLastCountry = pagNum * countriesPerPag 
+    const idxFirstCountry = idxLastCountry - countriesPerPag 
     const selectCountriesPerPag = allCountries.slice(idxFirstCountry, idxLastCountry)
   
-    // if(pagNum===1){
-    //     setCountriesPerPag(9)
-    // }else{
-    //     idxFirstCountry = idxFirstCountry - 1
-    // }
+    const paginado = (pagNum) =>{
+        setPagNum(pagNum)  
+    }
 
+    function handleInput(event){
+        setTimeout(function(){
+            if(event.target.value > Math.ceil(allCountries.length/countriesPerPag) || event.target.value < 1 ){return}
+            setPagNum(parseInt(event.target.value) )
+        }, 400);       
+    }
 
-const paginado = (pagNum) =>{
-    setPagNum(pagNum)
-       
-}
-useEffect(()=>{dispatch(getCountries())},[])
+    function handleClicck(event){
+    if(event.target.name === 'back' && pagNum === 1){return}
+    if(event.target.name === 'next' && pagNum === Math.ceil(allCountries.length/countriesPerPag) ){return}
+    if(event.target.name === 'next'){
+            setPagNum(pagNum + 1)
+        }else{
+            setPagNum(pagNum - 1)}        
+    }
 
+    function handleFilter(event){ 
+        dispatch(filterByContinent(event.target.value))
+        setPagNum(1) 
+    }
 
-function handleInput(event){
-    setTimeout(function(){
-        if(event.target.value > Math.ceil(allCountries.length/countriesPerPag) || event.target.value < 1 ){return}
-        setPagNum(parseInt(event.target.value) )
-        event.target.value = '' 
-    }, 900);
+    const handleFilterByName =(event) => {
+        dispatch(filterByname(event.target.value))
+        setPagNum(1)
+        setPagOrder(event.target.value) 
+    }
+
+    function handleSearchByName(event){ 
+        dispatch(searchByname(event))
+        setPagNum(1)
+    }
     
-}
-
-function handleClicck(event){
-   if(event.target.name === 'back' && pagNum === 1){return}
-   if(event.target.name === 'next' && pagNum === Math.ceil(allCountries.length/countriesPerPag) ){return}
-   if(event.target.name === 'next'){
-        setPagNum(pagNum + 1)
-    }else{
-        setPagNum(pagNum - 1)}
-    
-}
-function handleFilter(event){ 
-    dispatch(filterByContinent(event.target.value))
-    setPagNum(1) 
- }
- const handleFilterByName =(event) => {
-    dispatch(filterByname(event.target.value))
-    setPagNum(1)
-    setPagOrder(event.target.value)
-    
-}
-function handleSearchByName(event){ 
-    dispatch(searchByname(event))
-    setPagNum(1)
-
- }
- function handleFilterByActivity(event){ 
-    dispatch(filterByActivity(event.target.value))
-    setPagNum(1)
-
- }
+    function handleFilterByActivity(event){ 
+        dispatch(filterByActivity(event.target.value))
+        setPagNum(1)
+    }
 
     return(
         <div className={styles.filter}>
             <div className={styles.filter2}>
-            <Filter
-                handleFilter={handleFilter}
-                handleFilterByName={handleFilterByName}
-                handleSearchByName={handleSearchByName}
-                handleFilterByActivity={handleFilterByActivity}
-            />
-            
-            <Paginado 
-                allCountries={allCountries.length}
-                countriesPerPag={countriesPerPag}
-                paginado={paginado}
-                pagNum={pagNum}
-                
-            />
-            {/* <img src={globo} alt=""  className={styles.img}/> */}
-           
+                <Filter
+                    handleFilter={handleFilter}
+                    handleFilterByName={handleFilterByName}
+                    handleSearchByName={handleSearchByName}
+                    handleFilterByActivity={handleFilterByActivity}
+                />
+                <Paginado 
+                    allCountries={allCountries.length}
+                    countriesPerPag={countriesPerPag}
+                    paginado={paginado}
+                    pagNum={pagNum}
+                />
             </div>
 
-
             <div className={styles.cards}>
-            <Cards selectCountriesPerPag = {selectCountriesPerPag} />
+                <Cards selectCountriesPerPag = {selectCountriesPerPag} />
             </div>
            
             <div className={styles.paginado}>
@@ -109,7 +88,6 @@ function handleSearchByName(event){
                 <button className={styles.nextBack}   name='next' onClick={handleClicck}>{">>>"}</button>
             </div>
         </div>
-        
     )
 }
 

@@ -4,8 +4,6 @@ import styles from "./Filter.module.css"
 import { useSelector} from "react-redux";
 
 
-
-
 function Filter(props){
     
     const country = useSelector(state => state.countries);
@@ -17,14 +15,12 @@ function Filter(props){
     })
     
     const elements = [];
-
     country.forEach(element =>
     element.activities?.forEach(elementss => {
         if (!elements.includes(elementss.name)) {
         elements.push( elementss.name );
         }
-    })
-    );
+    }) );
 
     const handleInput = (event) =>{
     setCountryName(event.target.value)
@@ -32,14 +28,10 @@ function Filter(props){
     console.log("value", event.target.value)
     setResetInput({...resetInput, [event.target.name]: event.target.value})
     }
-  
-   
-
+         
     return(
         <div className={styles.filter}>
 
-
-{/* por aca es senor */}
             <input type="text" onChange={handleInput } placeholder="Search by name"/>
             <button onClick={()=> props.handleSearchByName(countryName)}>Search</button>
       
@@ -58,6 +50,7 @@ function Filter(props){
                 <option value="Europe">Europe</option>
                 <option value="Oceania">Oceania</option>
             </select>
+
 
             <label> Order</label>
             <select 

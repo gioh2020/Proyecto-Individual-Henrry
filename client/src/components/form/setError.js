@@ -1,21 +1,17 @@
 const regex = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/
 
-              
-
 
 function setFormError(data){
     let errors = {}
-    if(!data.name) errors.name ='Debes escribir un nombre';
-    else if(data.name.length< 3) errors.name = 'Debe contener mas de 2 caracters'
-    else if(!regex.test(data.img)) errors.img = 'Ingresa una url valido';
-    else if(!data.season) errors.season ='Debes selecionar un estado';
-    else if(!data.difficulty) errors.difficulty = 'Ingresa un valor'
-    else if(!data.duration) errors.duration = 'Ingresa un valor'
-    else if(data.duration === '0') errors.duration = 'Ingresa un valor igual o mayor a 1h'
-    else if(data.description.length< 20) errors.description = 'Debe contener mas de 20 caracters'
-
+    if(!data.name) errors.name ='You must write a name';
+    else if(data.name.length< 3) errors.name = 'Must contain more than 2 characters'
+    else if(!regex.test(data.img)) errors.img = 'You must write a valid link';
+    else if(!data.season) errors.season ='You must selct a state';
+    else if(!data.difficulty) errors.difficulty = 'Your must enter a value'
+    else if(!data.duration) errors.duration = 'Your must enter a value un valor'
+    else if(data.duration === '0') errors.duration = 'You must enter a value equal to or greater than 1h'
+    else if(data.description.length< 20) errors.description = 'Must contain more than 20 characters'
     return errors
-
 }
 
 export default setFormError

@@ -26,12 +26,9 @@ function Cards(props){
                         {countrie.continent === 'Europe'? <img className={styles.euImg} src={europe} />: null }
                         {countrie.continent === 'Asia'? <img className={styles.asiImg} src={asia} />: null }
                         {countrie.continent === 'Oceania'? <img className={styles.imageContinent} src={oceania} />: null }
-                        
-                        
                     </Link>  
                 )
             })}
-
         </div>
     ) 
 }

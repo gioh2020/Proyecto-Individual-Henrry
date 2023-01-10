@@ -10,6 +10,7 @@ export function getCountries(){
     }
 }
 
+
 export function filterByContinent(payload){
     return{
         type: 'FILTER_BY_CONTINENT',
