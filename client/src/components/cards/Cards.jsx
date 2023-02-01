@@ -13,7 +13,7 @@ function Cards(props){
     
     return(
         <div className={styles.cards}>
-             {props.selectCountriesPerPag?.map((countrie)=>{
+            {props.selectCountriesPerPag?.map((countrie)=>{
                 return(
                     <Link to={`/infocountry/${countrie.id}`} key={countrie.id} className={styles.card}>
                         <h1 className={styles.textName}>{countrie.name}</h1>

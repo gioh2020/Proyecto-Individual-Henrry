@@ -12,7 +12,6 @@ const server = express();
 server.name = 'API';
 server.use(express.json());
 server.post("/users/bulk", async (req, res) => {
-    console.log(Country)
     try {
         const data = req.body;
         const newUsers = await Country.bulkCreate(data);

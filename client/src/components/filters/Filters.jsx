@@ -24,8 +24,6 @@ function Filter(props){
 
     const handleInput = (event) =>{
     setCountryName(event.target.value)
-    console.log("name", event.target.name)
-    console.log("value", event.target.value)
     setResetInput({...resetInput, [event.target.name]: event.target.value})
     }
          

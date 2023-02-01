@@ -54,7 +54,7 @@ export function searchClocks(payload){
 }   
 
 export function postActivity(payload){
-    console.log(payload)
+
     return async function(dispatch){
         var response = await axios.post('/activities', payload)
         return response

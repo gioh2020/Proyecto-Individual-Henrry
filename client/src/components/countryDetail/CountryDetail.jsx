@@ -35,7 +35,6 @@ function CountryDetail(){
                     
                  </div >
                  <div className={styles.activitiesDiv}>{countryDeatil.activities?.map((activity)=>{
-                    console.log(activity)
                     return(
                         <div className={styles.activityDiv}key={activity.id} >
                             <div className={styles.back}>
